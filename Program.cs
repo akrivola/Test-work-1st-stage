@@ -9,20 +9,38 @@
 // При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
-void printArray(int[] array)
+void printArray(string[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        Console.Write(array[i]);
-        if (i != array.GetLength(0))
-            Console.Write(",");
+        Console.Write($"\"{array[i]}\"");
+        if (i != array.GetLength(0) - 1)
+            Console.Write(", ");
     }
     Console.Write("]");
 }
 
+string[] RemoveOver3Symbols(string[] array)
+{
+    string[] result = new string[array.GetLength(0)];
+    int countResult = 0;
+    for (int countArray = 0; countArray < array.GetLength(0); countArray++)
+    {
+        if (array[countArray].Length <= 3)
+            {
+                result[countResult] = array[countArray];
+                countResult++;
+            }
+    }
+    return result;
+}
+
 string[] arrayTest1 = {"hello", "2", "world", ":-)"};
 string[] arrayTest2 = {"1234", "1567", "-2", "computer science"};
-string[] arrayTest2 = {"Russia", "Denmark", "Kazan"};
+string[] arrayTest3 = {"Russia", "Denmark", "Kazan"};
 
 printArray(arrayTest1);
+Console.Write("->");
+printArray(RemoveOver3Symbols(arrayTest1));
+Console.WriteLine();
