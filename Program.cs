@@ -33,6 +33,7 @@ void printDataAndResults(string[] array)
     Console.WriteLine();
 }
 
+// основной метод (см. блок-схему алгоритма)
 string[] RemoveOver3Symbols(string[] array)
 {
     string[] result = new string[array.GetLength(0)];
@@ -45,6 +46,8 @@ string[] RemoveOver3Symbols(string[] array)
                 countResult++;
             }
     }
+    // отсекаем пустые значения в результате
+    Array.Resize(ref result, countResult);
     return result;
 }
 
