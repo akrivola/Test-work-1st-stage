@@ -9,6 +9,9 @@
 // При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
+// Текст программы:
+
+// вывод массива
 void printArray(string[] array)
 {
     Console.Write("[");
@@ -19,6 +22,15 @@ void printArray(string[] array)
             Console.Write(", ");
     }
     Console.Write("]");
+}
+
+// вывод исходных данных и результата
+void printDataAndResults(string[] array)
+{
+    printArray(array);
+    Console.Write("->");
+    printArray(RemoveOver3Symbols(array));
+    Console.WriteLine();
 }
 
 string[] RemoveOver3Symbols(string[] array)
@@ -40,7 +52,6 @@ string[] arrayTest1 = {"hello", "2", "world", ":-)"};
 string[] arrayTest2 = {"1234", "1567", "-2", "computer science"};
 string[] arrayTest3 = {"Russia", "Denmark", "Kazan"};
 
-printArray(arrayTest1);
-Console.Write("->");
-printArray(RemoveOver3Symbols(arrayTest1));
-Console.WriteLine();
+printDataAndResults(arrayTest1);
+printDataAndResults(arrayTest2);
+printDataAndResults(arrayTest3);
