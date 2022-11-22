@@ -44,3 +44,6 @@ https://github.com/akrivola/Test-work-1st-stage.git
 ![тут должна быть картинка](Screenshot.png)
 
 ## Контроль версий
+
+Применялся.
+![тут должна быть картинка](Контроль_версий.png)
